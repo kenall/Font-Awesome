@@ -211,21 +211,39 @@
     }
   }
 
-  &.kickstarter {
-    @kickstarter-bg: #489fdf;
-    background-color: @kickstarter-bg;
+  &.fa5 {
+    @fa5-bg: #489fdf;
+    background-color: @fa5-bg;
     border-bottom: rgba(0,0,0,0.2);
     .message-container { padding: 40px 0; }
     .tagline { font-size: 24px; }
+    .fa-external-link { vertical-align: -10%; }
+    .time-left {
+      font-size: 18px;
+      color: mix(@fa5-bg, #fff, 20%);
+    }
+    @keyframes flash-duration {
+      from {
+        color: #fff;
+      }
+      to {
+        color: mix(@fa5-bg, #fff, 20%);
+      }
+    }
+    .duration {
+      font-weight: 600;
+      animation-name: flash-duration;
+      animation-duration: 1.0s;
+    }
     a:not(.btn) {
       text-decoration: underline;
       color: #fff;
       &:hover { color: rgba(255,255,255,.8); }
     }
     .btn-primary {
-      @color: @kickstarter-bg;
+      @color: @fa5-bg;
       @background: #fff;
-      @border: mix(#000,@kickstarter-bg,10%);
+      @border: mix(#000,@fa5-bg,10%);
       font-weight: 600;
       font-size: 22px;
       padding: 14px 28px;
